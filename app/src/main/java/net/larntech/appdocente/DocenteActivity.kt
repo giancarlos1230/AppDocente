@@ -36,8 +36,17 @@ class DocenteActivity : AppCompatActivity() {
             docente = it
 
             nombre_docente.text = docente.nombre
-            salario_docente.text = "$${salario_docente}"
-            salario_docente.text = docente.direccion
+            apellido_docente.text=docente.apellido
+            sexo_doente.text=docente.sexo
+            fechaNacimiento_docente.text=docente.fechaNacimiento
+            ciudad_docente.text=docente.ciudad
+            direccion_docente.text = docente.direccion
+
+            padecimiento_docente.text=docente.padecimiento
+            celular_docente.text= "${docente.celular}"
+            fechaIngreso_docente.text=docente.fechaIngreso
+            salario_docente.text = "${docente.salario}"
+
         })
 
     }

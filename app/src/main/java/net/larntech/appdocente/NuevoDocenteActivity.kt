@@ -21,8 +21,16 @@ class NuevoDocenteActivity : AppCompatActivity() {
             val docente = intent.extras?.getSerializable("docente") as Docente
 
             etNombre.setText(docente.nombre)
-            etSalario.setText(docente.salario.toString())
+            etApellido.setText(docente.apellido)
+            etSexo.setText(docente.sexo)
+            etFechaNacimiento.setText(docente.fechaNacimiento)
+            etCiudad.setText(docente.ciudad)
             etDireccion.setText(docente.direccion)
+            etPadecimiento.setText(docente.padecimiento)
+            etCelular.setText(docente.celular.toString())
+            etFechaIngreso.setText(docente.fechaIngreso)
+            etSalario.setText(docente.salario.toString())
+
             idDocente = docente.idDocente
         }
 
@@ -30,10 +38,17 @@ class NuevoDocenteActivity : AppCompatActivity() {
 
         btnGuardar.setOnClickListener {
             val nombre = etNombre.text.toString()
-            val salario = etSalario.text.toString().toDouble()
+            val apellido = etApellido.text.toString()
+            val sexo = etSexo.text.toString()
+            val fechaNacimiento = etFechaNacimiento.text.toString()
+            val ciudad = etCiudad.text.toString()
             val direccion = etDireccion.text.toString()
+            val padecimiento = etPadecimiento.text.toString()
+            val celular = etCelular.text.toString().toDouble()
+            val fechaIngreso = etFechaIngreso.text.toString()
+            val salario = etSalario.text.toString().toDouble()
 
-            val docente = Docente(nombre, salario, direccion)
+            val docente = Docente(nombre, apellido, sexo, fechaNacimiento, ciudad, direccion, padecimiento, celular, fechaIngreso, salario)
 
             if (idDocente != null) {
                 CoroutineScope(Dispatchers.IO).launch {
